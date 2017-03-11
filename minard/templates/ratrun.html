@@ -3,7 +3,7 @@
 {% block head %}
 {{ super() }}
 
-<script type="text/javascript" src="https://root.cern/js/5.0.3/scripts/JSRootCore.min.js?2d&&io"></script>
+<script type="text/javascript" src="https://root.cern/js/5.0.3/scripts/JSRootCore.min.js?2d&&io&&mathjax"></script>
 <link rel="stylesheet" href="{{url_for('static', filename='css/ratrun.css') }}">
 
 {% endblock %}
@@ -91,7 +91,7 @@
 
       $(document).ready(
             function(){
-                JSROOT.AssertPrerequisites("io;2d;user:{{ url_for('static', filename='js/rat.js') }}", function(){
+                JSROOT.AssertPrerequisites("io;2d;mathjax;user:{{ url_for('static', filename='js/rat.js') }}", function(){
                     createPage({{ run.id }}, "plotarea");
             }, "loading");
       });
